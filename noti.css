@@ -34,6 +34,10 @@ html {
     scroll-behavior: smooth;
 }
 
+.body, .body>* {
+    white-space: inherit; /* Topgg fix */
+}
+
 .btn {
     border-radius: .5rem;
     padding-left: 1rem;
