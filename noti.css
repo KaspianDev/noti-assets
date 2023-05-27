@@ -49,6 +49,7 @@ html {
     text-decoration: none;
     color: inherit !important;
     display: inline-block;
+    line-height: normal;
 }
 
 .btn--fat {
