@@ -34,8 +34,8 @@ html {
     scroll-behavior: smooth;
 }
 
-.body, .body>* {
-    white-space: inherit; /* Topgg fix */
+* {
+    white-space: normal !important; /* Topgg fix */
 }
 
 .btn {
@@ -47,7 +47,7 @@ html {
     background: #568bf5;
     width: fit-content;
     text-decoration: none;
-    color: inherit;
+    color: inherit !important;
     display: inline-block;
 }
 
@@ -109,6 +109,7 @@ html {
 
 .flex--center {
     justify-content: center;
+    align-items: center;
 }
 
 .fitlist>ul>li {
