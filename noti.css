@@ -37,8 +37,7 @@
 
 .body {
     margin: 0;
-    max-width: 800px;
-    min-height: 100vh;
+    max-width: var(--body-height);
     color: #e8e8ea;
     font-family: Outfit;
     background: linear-gradient(0deg, #1e1936 0%, #1B132B 100%);
