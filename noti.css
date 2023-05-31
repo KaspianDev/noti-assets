@@ -251,7 +251,7 @@
 }
 
 #outro {
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
 .box--horizontal {
@@ -339,4 +339,12 @@
 
 .feature--syncable-roles {
     background-image: url("https://i.imgur.com/veiiSYG.png");
+}
+
+.credit {
+    display: block;
+    text-align: right;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    color: #3a334da2;
 }
