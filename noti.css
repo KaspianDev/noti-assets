@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&display=swap');
 
-html {
-    background: black;
-}
-
 .header {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -24,6 +20,19 @@ html {
 
 * {
     box-sizing: border-box;
+}
+
+.p-x {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.row-margin > * {
+    margin-bottom: 5px;
+}
+
+.row-margin > div:last-child {
+    margin-bottom: 0;
 }
 
 .body {
@@ -55,6 +64,7 @@ html {
     display: inline-block;
     line-height: normal;
     font-family: Outfit;
+    transition: filter .2s;
 }
 
 .btn--fat {
@@ -103,6 +113,10 @@ html {
     flex-wrap: wrap;
 }
 
+.icon--question {
+    --icon-data: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMjAgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmMzAiIGQ9Ik04MCAxNjBjMC0zNSAyOS02NCA2NC02NGgzMmMzNSAwIDY0IDI5IDY0IDY0djRjMCAyMS0xMSA0Mi0yOSA1M2wtNDMgMjdhODggODggMCAwIDAtNDAgNzR2MmEzMiAzMiAwIDEgMCA2NCAwdi0xYzAtOSA0LTE2IDExLTIxbDQyLTI3YzM3LTIzIDU5LTY0IDU5LTEwN3YtNGMwLTcxLTU3LTEyOC0xMjgtMTI4aC0zMkM3MyAzMiAxNiA4OSAxNiAxNjBhMzIgMzIgMCAxIDAgNjQgMHptODAgMzIwYTQwIDQwIDAgMSAwIDAtODAgNDAgNDAgMCAxIDAgMCA4MHoiLz48L3N2Zz4=')
+}
+
 .box--flex>* {
     flex: 49%;
 }
@@ -139,26 +153,22 @@ html {
 }
 
 .splitter {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.splitter::after {
-    color: #bbbbbb;
-    content: "~~~";
+    margin-top: 50px;
 }
 
 .box--outer {
     border: 1px solid;
     border-color: rgba(255, 255, 255, 0.3);
     border-radius: .5rem;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 6px;
-    padding-right: 6px;
     text-align: center;
     width: 50%;
+}
+
+.box--inner {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .box {
@@ -175,7 +185,7 @@ html {
     background-repeat: no-repeat;
     background-image: var(--icon-data);
     filter: blur(4px);
-    transform: translate(-4px, -4px);
+    transform: translate(-2px, -2px);
 }
 
 .box--title {
@@ -185,6 +195,18 @@ html {
     font-family: Outfit;
 }
 
+.tint {
+    width: fit-content;
+    padding: 4px;
+    border-radius: .5rem;
+    margin: 0 auto;
+    backdrop-filter: brightness(70%) blur(4px);
+}
+
+.left {
+    text-align: left;
+}
+
 .box--description {
     font-size: .9rem;
     color: #dddddd;
@@ -192,11 +214,11 @@ html {
 }
 
 .padding {
-    margin-top: 8px;
+    line-height: 10px;
 }
 
-.padding-2x {
-    margin-top: 16px;
+.padding::after {
+    content: " ";
 }
 
 .center {
@@ -219,6 +241,10 @@ html {
     background: #1da1f2;
 }
 
+.btn:hover {
+    filter: brightness(90%);
+}
+
 .symbol {
     width: 25px;
     height: 25px;
@@ -233,10 +259,12 @@ html {
     display: flex;
 }
 
-@media screen and (max-width: 375px) {
-    .box--horizontal {
+@media only screen and (max-width: 400px) {
+    .box--flex>* {
+        flex: 51%;
+    }
+    .fitlist {
         flex-direction: column;
-        align-items: center;
     }
 }
 
@@ -244,14 +272,72 @@ html {
     width: 100%;
 }
 
-.w-25 {
-    width: 25%;
+.link {
+    color: #568bf5;
+    text-decoration: underline;
 }
 
-.w-75 {
-    width: 75%;
+.w-30 {
+    width: 30%;
+}
+
+.w-70 {
+    width: 70%;
+}
+
+.h-200px {
+    height: 200px;
 }
 
 .left {
     text-align: left;
+}
+
+.feature--bg {
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
+
+.relative {
+    position: relative;
+}
+
+.popup {
+    position: absolute;
+    display: none;
+    scale: 1;
+    transition: all .35s ease-out;
+    border-radius: .5rem;
+    opacity: .75;
+    width: 100%;
+    border: 1px solid;
+    border-color: rgba(255, 255, 255, 0.3);
+    z-index: 100;
+}
+
+.popup:hover {
+    scale: 1.1;
+    display: block;
+    opacity: 1;
+}
+
+.feature--bg:hover > .popup {
+    display: block;
+}
+
+.feature--users-live {
+    background-image: url("https://i.imgur.com/HukHAnH.jpg");
+}
+
+.feature--live-role {
+    background-image: url("https://i.imgur.com/KNCKKr6.jpg");
+}
+
+.feature--notification-customizer {
+    background-image: url("https://i.imgur.com/gRtK21Y.png");
+}
+
+.feature--syncable-roles {
+    background-image: url("https://i.imgur.com/nLrK8Gq.png");
 }
