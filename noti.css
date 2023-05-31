@@ -272,7 +272,7 @@
 }
 
 .link {
-    color: #568bf5;
+    color: #568bf5 !important;
     text-decoration: underline;
 }
 
